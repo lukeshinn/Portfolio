@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+var db = require("./database.js")
 
 const app = express();
 
@@ -13,12 +14,29 @@ app.get('/api/getList', (req,res) => {
 	console.log('Sent list of items');
 });
 
+app.get("/api/users", (req, res, next) => {
+  var sql = "select * from user"
+  var params = []
+  db.all(sql, params, (err, rows) => {
+      if (err) {
+        res.status(400).json({"error":err.message});
+        return;
+      }
+      res.json({
+          "message":"success",
+          "data":rows
+      })
+    });
+});
+
 // Handles any requests that don't match the ones above
 app.get('*', (req,res) =>{
 	res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
 
-const port = process.env.PORT || 5000;
+
+
+const port = process.env.PORT || 4000;
 app.listen(port);
 
 console.log('App is listening on port ' + port);
