@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import UserCard from "./UserCard";
 
 const About = () => {
   const [count, setCount] = useState(0);
@@ -25,7 +26,7 @@ const About = () => {
   }, []);
 
   const renderUsers = () => {
-    return users.map((t) => t.id);
+    return users.map((t) => <UserCard user={t} key={t.id} />);
   };
 
   return (
@@ -39,13 +40,11 @@ const About = () => {
       <h1> {renderUsers()}</h1>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Click me</button>
-      {users.id}
+      <Link to={"./"}>
+        <button variant="raised">Back to Home</button>
+      </Link>
     </div>
   );
 };
 
 export default About;
-
-// <Link to={"./"}>
-// <button variant="raised">Back to Home</button>
-// </Link>
