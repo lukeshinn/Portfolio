@@ -1,20 +1,20 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import "./App.css";
-import Home from "./pages/Home";
-import List from "./pages/List";
+import "bootstrap/dist/css/bootstrap.css";
+import "./App.scss";
+import Layout from "./components/Layout";
 import About from "./pages/About";
-import UserCard from "./pages/UserCard";
+import List from "./pages/List";
+import Home from "./pages/Home";
+import { BrowserRouter, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Switch>
+      <>
         <Route exact path="/" component={Home} />
         <Route path="/list" component={List} />
         <Route path="/about" component={About} />
-        <Route path="/userCard" component={UserCard} />
-      </Switch>
+      </>
     </BrowserRouter>
   );
 };

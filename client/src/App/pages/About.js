@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import UserCard from "./UserCard";
+import Layout from "../components/Layout";
 
 const About = () => {
   const [count, setCount] = useState(0);
@@ -30,20 +31,22 @@ const About = () => {
   };
 
   return (
-    <div>
+    <Layout>
       <div>
-        {users.map((item) => {
-          return <div>{item.email}</div>;
-        })}
-      </div>
+        <div>
+          {users.map((item) => {
+            return <div>{item.email}</div>;
+          })}
+        </div>
 
-      <h1> {renderUsers()}</h1>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
-      <Link to={"./"}>
-        <button variant="raised">Back to Home</button>
-      </Link>
-    </div>
+        <h1> {renderUsers()}</h1>
+        <p>You clicked {count} times</p>
+        <button onClick={() => setCount(count + 1)}>Click me</button>
+        <Link to={"./"}>
+          <button variant="raised">Back to Home</button>
+        </Link>
+      </div>
+    </Layout>
   );
 };
 

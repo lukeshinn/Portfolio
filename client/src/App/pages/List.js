@@ -1,4 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
+import Layout from "../components/Layout";
 
 class List extends Component {
   // Initialize the state
@@ -25,22 +26,24 @@ class List extends Component {
     const { list } = this.state;
 
     return (
-      <div className="App">
-        <h1>List of Items</h1>
-        {/* Check to see if any items are found*/}
-        {list.length ? (
-          <div>
-            {/* Render the list of items */}
-            {list.map((item) => {
-              return <div>{item}</div>;
-            })}
-          </div>
-        ) : (
-          <div>
-            <h2>No List Items Found</h2>
-          </div>
-        )}
-      </div>
+      <Layout>
+        <div className="App">
+          <h1>List of Items</h1>
+          {/* Check to see if any items are found*/}
+          {list.length ? (
+            <div>
+              {/* Render the list of items */}
+              {list.map((item) => {
+                return <div>{item}</div>;
+              })}
+            </div>
+          ) : (
+            <div>
+              <h2>No List Items Found</h2>
+            </div>
+          )}
+        </div>
+      </Layout>
     );
   }
 }
