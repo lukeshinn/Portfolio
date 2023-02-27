@@ -1,0 +1,30 @@
+:root {
+  --font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir,
+    helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial, sans-serif;
+  --font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+  --font-size-small: 12px;
+  --sleep: #121212;
+  --charcoal: #333333;
+  --electric-blue: #0892d0;
+  --ice: #d9f2fe;
+  --white: #ffffff;
+  --light-label: rgba(255, 255, 255, 0.6);
+  --dark-label: rgba(0, 0, 0, 0.6);
+  --grid-gap: 30px; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+.flex {
+  display: flex; }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--electric-blue); }
+  footer p {
+    margin-bottom: 0; }

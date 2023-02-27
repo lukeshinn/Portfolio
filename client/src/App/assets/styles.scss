@@ -1,0 +1,22 @@
+@import "theme-variables";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // background: var(--electric-blue);
+  background: var(--electric-blue);
+  p {
+    margin-bottom: 0;
+  }
+}

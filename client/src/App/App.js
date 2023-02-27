@@ -1,7 +1,4 @@
-import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import "./App.scss";
-import Layout from "./components/Layout";
 import About from "./pages/About";
 import List from "./pages/List";
 import Home from "./pages/Home";
