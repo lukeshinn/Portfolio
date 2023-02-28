@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "classnames": "^2.3.2",
     "node-sass-chokidar": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "react": "^18.0.0",
@@ -17,7 +18,8 @@
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "start": "npm-run-all -p testing watch-css",
+    "start": "react-scripts start",
+    "dev": "npm-run-all -p testing watch-css",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

@@ -2,28 +2,26 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import UserCard from "./UserCard";
 import Layout from "../components/Layout";
+import SiteLogo from "../../public/logo.png";
+import UseSrc from "../components/UseSrc";
 
 const About = () => {
   const [count, setCount] = useState(0);
   const [users, setUsers] = useState([]);
+  const { cover } = UseSrc();
 
   const getUsers = () => {
-    console.log("Start of User Function !!!");
     fetch("/api/users")
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        console.log("then data funciton below");
-        console.log(data.data);
         setUsers(data.data);
       });
   };
 
   useEffect(() => {
     getUsers();
-    console.log("UseEffect is fired, user constant below");
-    console.log(users);
   }, []);
 
   const renderUsers = () => {
@@ -33,6 +31,7 @@ const About = () => {
   return (
     <Layout>
       <div>
+        {cover}
         <div>
           {users.map((item) => {
             return <div>{item.email}</div>;

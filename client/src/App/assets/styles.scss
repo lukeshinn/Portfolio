@@ -10,13 +10,50 @@ body {
   display: flex;
 }
 
+.dark {
+  main {
+    background: var(--electric-blue);
+  }
+}
+
+.navbar {
+  background: var(--dk-navy);
+}
+
+.site-logo {
+  max-width: 50px;
+}
+
+#theme-toggle {
+  display: flex;
+  place-items: center;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 20px;
+  border: 0;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: var(--sleep);
+}
+
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // background: var(--electric-blue);
   background: var(--electric-blue);
+  padding: 10px 20px;
   p {
     margin-bottom: 0;
   }
+}
+
+// ================ Image Loading ===============
+.smooth-image {
+  transition: opacity 1s;
+}
+.image-visible {
+  opacity: 1;
+}
+.image-hidden {
+  opacity: 0;
 }

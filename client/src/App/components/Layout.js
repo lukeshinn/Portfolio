@@ -1,11 +1,7 @@
-import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "../assets/styles.scss";
 import NavBar from "../navbar/Navbar";
-import Home from "../pages/Home";
-import List from "../pages/List";
-import About from "../pages/About";
 import Footer from "../pages/Footer";
 
 const Layout = ({ children }) => {
