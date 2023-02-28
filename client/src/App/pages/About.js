@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import UserCard from "./UserCard";
 import Layout from "../components/Layout";
 import SiteLogo from "../../public/logo.png";
-import UseSrc from "../components/UseSrc";
-
 const About = () => {
   const [count, setCount] = useState(0);
   const [users, setUsers] = useState([]);
