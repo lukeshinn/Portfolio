@@ -81,19 +81,37 @@ nav.navbar {
 footer {
   color: var(--white);
   background: var(--electric-blue);
-  padding: 10px 20px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   p {
     margin-bottom: 0;
   }
+  //bulma override
+  .subtitle {
+    color: inherit;
+  }
+  .subtitle:not(:last-child) {
+    margin: 0;
+  }
 }
 
 .social-media {
   display: flex;
-  svg:not(:last-child) {
-    margin-right: 15px;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+  a {
+    display: flex;
+    color: inherit;
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.2s linear, -webkit-transform 0.2s linear;
+    }
   }
 }
 
