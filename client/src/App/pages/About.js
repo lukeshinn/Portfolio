@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import UserCard from "./UserCard";
 import Layout from "../components/Layout";
-import SiteLogo from "../../public/logo.png";
+import ImageLoader from "../components/ImageLoader";
+import Headshot from "../../public/lukeshinn.jpg";
+
 const About = () => {
-  const [count, setCount] = useState(0);
   const [users, setUsers] = useState([]);
-  const { cover } = UseSrc();
 
   const getUsers = () => {
     fetch("/api/users")
@@ -28,20 +28,24 @@ const About = () => {
 
   return (
     <Layout>
-      <div>
-        {cover}
-        <div>
-          {users.map((item) => {
-            return <div>{item.email}</div>;
-          })}
+      <div class="section">
+        <div class="columns">
+          <div class="column">
+            <h1 class="title">I'm Luke Shinn</h1>
+            <h3 class="subtitle">Software Engineer</h3>
+            <p>Technically sound, creative problem solving culture giant</p>
+          </div>
+          <div class="column">
+            <div class="featured-image">
+              <ImageLoader src={Headshot} />
+            </div>
+          </div>
+          {/* {users.map((item) => {
+          return <div>{item.email}</div>;
+        })} */}
+          {/* <h1> {renderUsers()}</h1> */}
+          {/* <p>You clicked {count} times</p> */}
         </div>
-
-        <h1> {renderUsers()}</h1>
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>Click me</button>
-        <Link to={"./"}>
-          <button variant="raised">Back to Home</button>
-        </Link>
       </div>
     </Layout>
   );

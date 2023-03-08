@@ -1,4 +1,3 @@
-// import "bootstrap/dist/css/bootstrap.css";
 import About from "./pages/About";
 import List from "./pages/List";
 import Home from "./pages/Home";

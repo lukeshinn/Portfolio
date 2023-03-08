@@ -41,5 +41,8 @@
   },
   "engines": {
     "node": "16.x"
+  },
+  "devDependencies": {
+    "bulma": "^0.9.4"
   }
 }

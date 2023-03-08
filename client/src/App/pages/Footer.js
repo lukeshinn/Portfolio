@@ -1,11 +1,15 @@
 import React from "react";
-import { BsGithub } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsInstagram } from "react-icons/bs";
 
 const Footer = () => {
   return (
     <footer>
       <p>© 2023 Luke Shinn </p>
-      <BsGithub />
+      <div class="social-media">
+        <BsGithub />
+        <BsLinkedin />
+        <BsInstagram />
+      </div>
     </footer>
   );
 };
