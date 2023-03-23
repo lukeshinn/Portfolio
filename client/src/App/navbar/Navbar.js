@@ -20,11 +20,10 @@ const MenuItems = [
     path: "/graphql",
     title: "GraphQL",
   },
-
-  // {
-  //   path: "/contact",
-  //   title: "Contact",
-  // },
+  {
+    path: "/api",
+    title: "API",
+  },
 ];
 
 const NavBar = () => {

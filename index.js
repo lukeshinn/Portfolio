@@ -2,7 +2,15 @@ const express = require("express");
 const path = require("path");
 var db = require("./database.js");
 
+var md5 = require("md5");
+
+var bodyParser = require("body-parser");
+
 const app = express();
+
+// JSON requests
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, "client/build")));
@@ -47,6 +55,7 @@ app.get("/api/user/:id", (req, res, next) => {
 });
 
 app.post("/api/user/", (req, res, next) => {
+  console.log("/api/user POST hit");
   var errors = [];
   if (!req.body.password) {
     errors.push("No password specified");
@@ -127,3 +136,5 @@ const port = process.env.PORT || 4000;
 app.listen(port);
 
 console.log("App is listening on port " + port);
+
+// https://code.visualstudio.com/docs/nodejs/nodejs-debugging

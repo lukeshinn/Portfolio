@@ -2,6 +2,7 @@ import About from "./pages/About";
 import List from "./pages/List";
 import Home from "./pages/Home";
 import GraphQL from "./pages/GraphQL";
+import API from "./pages/API";
 import { BrowserRouter, Route } from "react-router-dom";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/list" component={List} />
           <Route path="/about" component={About} />
           <Route path="/graphql" component={GraphQL} />
+          <Route path="/api" component={API} />
         </>
       </ApolloProvider>
     </BrowserRouter>

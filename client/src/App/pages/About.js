@@ -6,26 +6,6 @@ import ImageLoader from "../components/ImageLoader";
 import Headshot from "../../public/lukeshinn.jpg";
 
 const About = () => {
-  const [users, setUsers] = useState([]);
-
-  const getUsers = () => {
-    fetch("/api/users")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setUsers(data.data);
-      });
-  };
-
-  useEffect(() => {
-    getUsers();
-  }, []);
-
-  const renderUsers = () => {
-    return users.map((t) => <UserCard user={t} key={t.id} />);
-  };
-
   return (
     <Layout>
       <div class="section">
@@ -40,11 +20,6 @@ const About = () => {
               <ImageLoader src={Headshot} />
             </div>
           </div>
-          {/* {users.map((item) => {
-          return <div>{item.email}</div>;
-        })} */}
-          {/* <h1> {renderUsers()}</h1> */}
-          {/* <p>You clicked {count} times</p> */}
         </div>
       </div>
     </Layout>
