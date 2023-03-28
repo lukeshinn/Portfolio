@@ -33,6 +33,7 @@ const API = () => {
     } catch (err) {
       console.log(err);
     }
+    getUsers();
   };
 
   const getUsers = () => {
