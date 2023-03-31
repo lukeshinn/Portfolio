@@ -53,10 +53,13 @@ const API = () => {
   const renderUsers = () => {
     return users.map((t) => <UserCard user={t} key={t.id} />);
   };
+
   return (
     <Layout>
       <div class="section">
-        <h1> {renderUsers()}</h1>
+        <UserCard users={users} />
+
+        {/* <h1> {renderUsers()}</h1> */}
       </div>
       <div class="section">
         <form onSubmit={handleSubmit} class="form">

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { AiFillCloseSquare } from "react-icons/ai";
 
-const UserCard = (props) => {
-  const { user } = props;
+const UserCard = ({ users }) => {
+  // const UserCard = (props) => {
+  // const { user } = props;
 
-  let deleteUser = async (e) => {
+  let deleteUser = async (user) => {
+    console.log("deleting user");
     try {
       let res = await fetch("/api/user/", {
         method: "DELETE",
@@ -19,12 +21,23 @@ const UserCard = (props) => {
   };
   return (
     <div class="user-card">
-      <h1>The user card! {user.name}</h1>
+      {/* <h1>The user card! {user.name}</h1> */}
       {/* TODO: */}
       {/* why cant I call this onclick without an arrow function */}
-      <div onClick={() => deleteUser()}>
+      {/* <div onClick={() => deleteUser()}>
         <AiFillCloseSquare />
-      </div>
+      </div> */}
+
+      {users.map((user, index) => {
+        return (
+          <>
+            <p key={index}>{user.name}</p>
+            <div onClick={() => deleteUser(user)}>
+              <AiFillCloseSquare />
+            </div>
+          </>
+        );
+      })}
     </div>
   );
 };
