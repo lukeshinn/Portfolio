@@ -50,16 +50,26 @@ const API = () => {
     getUsers();
   }, []);
 
-  const renderUsers = () => {
-    return users.map((t) => <UserCard user={t} key={t.id} />);
+  let deleteUser = async (user) => {
+    console.log("deleting user");
+    try {
+      let res = await fetch("/api/user/", {
+        method: "DELETE",
+        headers: new Headers({ "content-type": "application/json" }),
+        body: JSON.stringify({
+          id: user.id,
+        }),
+      });
+    } catch (err) {
+      console.log(err);
+    }
+    getUsers();
   };
 
   return (
     <Layout>
       <div class="section">
-        <UserCard users={users} />
-
-        {/* <h1> {renderUsers()}</h1> */}
+        <UserCard users={users} deleteUser={deleteUser} />
       </div>
       <div class="section">
         <form onSubmit={handleSubmit} class="form">

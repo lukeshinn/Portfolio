@@ -1,24 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiFillCloseSquare } from "react-icons/ai";
 
-const UserCard = ({ users }) => {
-  // const UserCard = (props) => {
-  // const { user } = props;
-
-  let deleteUser = async (user) => {
-    console.log("deleting user");
-    try {
-      let res = await fetch("/api/user/", {
-        method: "DELETE",
-        headers: new Headers({ "content-type": "application/json" }),
-        body: JSON.stringify({
-          id: user.id,
-        }),
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  };
+const UserCard = ({ users, deleteUser }) => {
   return (
     <div class="user-card">
       {/* <h1>The user card! {user.name}</h1> */}
@@ -31,9 +14,11 @@ const UserCard = ({ users }) => {
       {users.map((user, index) => {
         return (
           <>
-            <p key={index}>{user.name}</p>
-            <div onClick={() => deleteUser(user)}>
-              <AiFillCloseSquare />
+            <div class="user" key={index}>
+              {user.name}
+              <div onClick={() => deleteUser(user)}>
+                <AiFillCloseSquare />
+              </div>
             </div>
           </>
         );

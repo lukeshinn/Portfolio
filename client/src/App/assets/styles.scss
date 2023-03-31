@@ -39,8 +39,13 @@ main {
   border-radius: 6px;
 }
 
-.user-card {
+.user-card,
+.user {
   display: flex;
+}
+
+.user-card {
+  flex-direction: column;
 }
 
 // ================ Header ======================
