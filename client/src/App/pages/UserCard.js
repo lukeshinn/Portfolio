@@ -11,18 +11,24 @@ const UserCard = ({ users, deleteUser }) => {
         <AiFillCloseSquare />
       </div> */}
 
-      {users.map((user, index) => {
-        return (
-          <>
-            <div class="user" key={index}>
-              {user.name}
-              <div onClick={() => deleteUser(user)}>
-                <AiFillCloseSquare />
-              </div>
-            </div>
-          </>
-        );
-      })}
+      <table class="table">
+        <tbody>
+          {users.map((user, index) => {
+            return (
+              <tr key={index}>
+                <td>{user.id}</td>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>
+                  <div onClick={() => deleteUser(user)}>
+                    <AiFillCloseSquare />
+                  </div>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 };
