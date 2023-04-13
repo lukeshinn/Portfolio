@@ -75,19 +75,9 @@ app.delete("/api/user/", (req, res, next) => {
   });
 });
 
-// Handles any requests that don't match the ones above
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
-});
-
-const port = process.env.PORT || 4000;
-app.listen(port);
-
-console.log("App is listening on port " + port);
-
 app.get("/api/todos", (req, res, next) => {
-  console.log("users hit");
-  var sql = "select * from user";
+  console.log("todos hit");
+  var sql = "select * from todos";
   var params = [];
   db.all(sql, params, (err, rows) => {
     if (err) {
@@ -101,6 +91,16 @@ app.get("/api/todos", (req, res, next) => {
     });
   });
 });
+
+// Handles any requests that don't match the ones above
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
+
+const port = process.env.PORT || 4000;
+app.listen(port);
+
+console.log("App is listening on port " + port);
 
 // HELPFUL NOTES
 // https://code.visualstudio.com/docs/nodejs/nodejs-debugging

@@ -13,6 +13,10 @@ const MenuItems = [
     title: "About",
   },
   {
+    path: "/todolist",
+    title: "TodoList",
+  },
+  {
     path: "/graphql",
     title: "GraphQL",
   },

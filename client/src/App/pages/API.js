@@ -116,10 +116,4 @@ const API = () => {
 
 export default API;
 
-// {
-//   users.map((item) => {
-//     return <div>{item.email}</div>;
-//   });
-// }
-
 // https://www.techomoro.com/submit-a-form-data-to-rest-api-in-a-react-app/
