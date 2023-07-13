@@ -16,8 +16,8 @@ const ThemeToggle = () => {
   };
 
   useEffect(() => {
-    setBodyClass("light");
-    setInitialTheme("light");
+    setBodyClass("dark");
+    setInitialTheme("dark");
   }, []);
 
   return (

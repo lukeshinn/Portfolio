@@ -2,7 +2,6 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import TodoList from "./pages/TodoList";
 import GraphQL from "./pages/GraphQL";
-import GraphQL2 from "./pages/TodoList";
 import API from "./pages/API";
 import { BrowserRouter, Route } from "react-router-dom";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
