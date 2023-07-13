@@ -1,19 +1,6 @@
 @charset "utf-8";
 @import "theme-variables";
 
-// Import only what you need from Bulma
-@import "../../../node_modules/bulma/sass/utilities/_all.sass";
-@import "../../../node_modules/bulma/sass/base/_all.sass";
-@import "../../../node_modules/bulma/sass/elements/button.sass";
-@import "../../../node_modules/bulma/sass/elements/container.sass";
-@import "../../../node_modules/bulma/sass/elements/title.sass";
-@import "../../../node_modules/bulma/sass/elements/content.sass";
-@import "../../../node_modules/bulma/sass/form/_all.sass";
-@import "../../../node_modules/bulma/sass/components/navbar.sass";
-@import "../../../node_modules/bulma/sass/layout/hero.sass";
-@import "../../../node_modules/bulma/sass/grid/_all.sass";
-@import "../../../node_modules/bulma/sass/layout/section.sass";
-
 body {
   margin: 0;
   padding: 0;
@@ -31,33 +18,14 @@ img {
   }
 }
 
-main {
-  margin: 90px 0px auto;
-}
-
-.featured-image {
-  border-radius: 6px;
-}
-
-.user-card,
-.user {
-  display: flex;
-}
-
-.user-card {
-  flex-direction: column;
-}
-
 // ================ Header ======================
 // ==============================================
 nav.navbar {
-  position: fixed;
   width: 100%;
   max-height: 90px;
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  z-index: 5;
   top: 0;
   left: 0;
   border-bottom: 4px solid var(--electric-blue);
@@ -96,10 +64,6 @@ footer {
   align-items: flex-end;
   p {
     margin-bottom: 0;
-  }
-  //bulma override
-  .subtitle {
-    color: inherit;
   }
   .subtitle:not(:last-child) {
     margin: 0;
