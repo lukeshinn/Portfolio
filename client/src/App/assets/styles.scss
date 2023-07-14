@@ -54,8 +54,21 @@ main {
   overflow: hidden;
 }
 
+.main-container-inner {
+  padding: 20px;
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0 30px;
+}
+
 .isLoaded {
   width: 100%;
+  /* border: 20px solid var(--electric-blue); */
   animation-name: expandMainContainer;
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.2, -1, 0.8, 1);
@@ -123,7 +136,7 @@ nav.navbar {
 // ==============================================
 footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-end;
   p {
     margin-bottom: 0;

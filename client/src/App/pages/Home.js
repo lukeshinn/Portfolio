@@ -1,11 +1,17 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
+import Projects from "./MyProjects";
 
 const Home = () => {
   return (
     <Layout>
-      <h1 class="HomePage">Home Page</h1>
+      <div class="feature-content">
+        <div class="main-message">
+          <h1 class="HomePage">Home Page</h1>
+          <Projects />
+        </div>
+        <div class="project-links">LINKS</div>
+      </div>
     </Layout>
   );
 };
