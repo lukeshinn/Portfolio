@@ -5,7 +5,7 @@ const Project = ({ projects }) => {
     <>
       {projects ? (
         projects.map((project, index) => {
-          return <p>{project.id}</p>;
+          return <p>{project.title}</p>;
         })
       ) : (
         <div>You dont have any projects</div>

@@ -149,10 +149,10 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
-const port = process.env.PORT || 4000;
-app.listen(port);
+// const port = process.env.PORT || 4000;
+// app.listen(port);
 
-console.log("App is listening on port " + port);
+// console.log("App is listening on port " + port);
 
 // HELPFUL NOTES
 // https://code.visualstudio.com/docs/nodejs/nodejs-debugging
