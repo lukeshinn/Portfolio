@@ -7,14 +7,17 @@ import { BsGithub, BsLinkedin, BsInstagram } from "react-icons/bs";
 
 const SocialIcons = [
   {
+    id: 1,
     icon: <BsGithub size={25} />,
     url: "https://github.com/lukeshinn",
   },
   {
+    id: 2,
     icon: <BsLinkedin size={25} />,
     url: "https://www.linkedin.com/in/luke-shinn-baa8a066/",
   },
   {
+    id: 3,
     icon: <BsInstagram size={25} />,
     url: "https://www.instagram.com/shinn_bone1/",
   },
@@ -51,17 +54,22 @@ const NavBar = () => {
   // ));
 
   const socialMedia = SocialIcons.map((socialIcon, index) => (
-    <a href={socialIcon.url} target="_blank" rel="noreferrer">
+    <a
+      key={socialIcon.id}
+      href={socialIcon.url}
+      target="_blank"
+      rel="noreferrer"
+    >
       {socialIcon.icon}
     </a>
   ));
 
   return (
-    <nav class="navbar" role="navigation">
+    <nav className="navbar" role="navigation">
       <img className="site-logo" src={SiteLogo} alt={"Luke Shinn Logo"} />
-      <div class="flex">
+      <div className="flex">
         <ThemeToggle />
-        <div class="social-media">{socialMedia}</div>
+        <div className="social-media">{socialMedia}</div>
       </div>
     </nav>
   );

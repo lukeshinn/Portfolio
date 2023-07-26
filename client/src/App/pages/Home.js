@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import Projects from "./Projects";
 import ProjectLinks from "./ProjectLinks";
@@ -19,17 +19,21 @@ const Home = () => {
   if (error) return <pre>{error.message}</pre>;
   console.log(data);
 
-  const [activeProject, setActiveProject] = useState(false);
+  // const [activeProject, setActiveProject] = useState([]);
+
+  // useEffect(() => {
+  //   setActiveProject[]
+  // }, []);
 
   return (
     <Layout>
-      <div class="feature-content">
-        <div class="main-message">
-          <h1 class="HomePage">Home Page</h1>
+      <div className="feature-content">
+        <div className="main-message">
+          <h1 className="HomePage">Home Page</h1>
           <p>This is a message about me</p>
           <Projects projects={data.books} />
         </div>
-        <div class="project-links">
+        <div className="project-links">
           <ProjectLinks projectLinks={data.books} />
         </div>
       </div>

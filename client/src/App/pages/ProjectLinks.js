@@ -6,7 +6,7 @@ const ProjectLinks = ({ projectLinks, handleClick }) => {
       {projectLinks ? (
         projectLinks.map((project, index) => {
           return (
-            <div className={project.title}>
+            <div className={project.title} key={index}>
               <a>{project.author} </a>
             </div>
           );

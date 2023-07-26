@@ -32,12 +32,12 @@ const Layout = ({ children }) => {
   return (
     <main>
       <div className={mainContainerClassNames}>
-        <div class="border top-left"></div>
-        <div class="main-container-inner">
+        <div className="border top-left"></div>
+        <div className="main-container-inner">
           <NavBar />
           {children}
           <Footer />
-          <div class="border bottom-right"></div>
+          <div className="border bottom-right"></div>
         </div>
       </div>
     </main>

@@ -6,7 +6,11 @@ const Projects = ({ projects }) => {
     <>
       {projects ? (
         projects.map((project, index) => {
-          return <div className={project.title}>{project.title}</div>;
+          return (
+            <div key={index} className={project.title}>
+              {project.title}
+            </div>
+          );
         })
       ) : (
         <div>You dont have any projects</div>
