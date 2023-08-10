@@ -17,7 +17,10 @@ const Projects = ({ projects, activeProject }) => {
               key={index}
             >
               <h1>{project.title}</h1>
-              <span>{project.author}</span>
+
+              <span className="message-border">
+                <p>{project.author}</p>
+              </span>
             </div>
           );
         })

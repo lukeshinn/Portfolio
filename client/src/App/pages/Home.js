@@ -43,11 +43,18 @@ const Home = () => {
         <div className="main-message">
           <div className={welcomeMessageClassnames}>
             <h1 className="welcome-message">Welcome</h1>
-            <p>
-              Hi, I'm Luke. A technically sound, creative problem solving,
-              culture giant
-            </p>
-            <ImageLoader src={Headshot} />
+            <span className="message-border">
+              <p>
+                Hi, I'm Luke. A technically sound, creative problem solving,
+                culture giant.
+              </p>
+
+              <p>
+                I'm passionate about buildling beautiful scalable applications
+                with an intuitive UI and a high degree of quality.
+              </p>
+              <ImageLoader src={Headshot} />
+            </span>
           </div>
           <div className="individual-project">
             <Projects

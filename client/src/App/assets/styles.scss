@@ -1,5 +1,4 @@
 @charset "utf-8";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap");
 @import "theme-variables";
 
 // ================ Site Defaults ======================
@@ -40,8 +39,8 @@ body {
 }
 
 img {
-  max-height: 400px;
-  max-width: 400px;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 // ================ Main Container ======================
@@ -111,6 +110,10 @@ main {
   user-select: none;
   border-top-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  h1 {
+    font-size: 30px;
+    font-weight: 100;
+  }
 }
 
 // ================ Featured Projects ======================
@@ -121,18 +124,18 @@ main {
   backface-visibility: hidden;
   -webkit-font-smoothing: subpixel-antialiased;
   box-sizing: border-box;
-  min-height: calc(100% - 102px);
-  height: calc(100% - 102px);
+  min-height: calc(100% - 80px);
+  height: calc(100% - 80px);
+  width: 100%;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   display: flex;
   transform: translateZ(0);
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 50px;
+  padding-left: 0px;
   @media screen and (min-width: 900px) {
+    min-height: calc(100% - 102px);
+    height: calc(100% - 102px);
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -158,6 +161,14 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  h1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    @media screen and (min-width: 900px) {
+      margin-top: 60px;
+      margin-bottom: 30px;
+    }
+  }
 }
 
 .welcome-message {
@@ -172,12 +183,36 @@ main {
   opacity: 0;
 }
 
+.message-border {
+  margin-left: 30px;
+  font-size: 0.9em;
+  font-weight: 100;
+  line-height: 1.6;
+  display: block;
+  position: relative;
+  &:after {
+    content: " ";
+    width: 2px;
+    background: linear-gradient(
+      0deg,
+      var(--electric-blue) 0%,
+      var(--yellow) 100%
+    );
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -30px;
+  }
+}
+
 // ================ Project Links ======================
 // ==============================================
 .project-links {
   flex: 1;
-  flex-basis: 30.9017%;
   position: relative;
+  @media screen and (min-width: 900px) {
+    flex-basis: 30.9017%;
+  }
 }
 
 .project-links-wrapper {
@@ -322,7 +357,6 @@ main {
 .navbar {
   display: flex;
   justify-content: space-between;
-  /* border-bottom: 4px solid var(--electric-blue); */
 }
 
 .flex {
@@ -353,6 +387,13 @@ footer {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  h2 {
+    font-size: 24px;
+    font-weight: 100;
+    @media screen and (min-width: 900px) {
+      margin: 0;
+    }
+  }
   p {
     margin-bottom: 0;
   }
