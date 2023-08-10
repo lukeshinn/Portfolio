@@ -65,13 +65,13 @@ const NavBar = () => {
   ));
 
   return (
-    <nav className="navbar" role="navigation">
+    <header className="navbar" role="navigation">
       <img className="site-logo" src={SiteLogo} alt={"Luke Shinn Logo"} />
       <div className="flex">
         <ThemeToggle />
         <div className="social-media">{socialMedia}</div>
       </div>
-    </nav>
+    </header>
   );
 };
 

@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import Projects from "./Projects";
-import ProjectLinks from "./ProjectLinks";
 import { useQuery, gql } from "@apollo/client";
+import classNames from "classnames";
+import ImageLoader from "../components/ImageLoader";
+import Headshot from "../../public/hs-transparent.png";
 
-const FILMS_QUERY = gql`
+const PROJECTS_QUERY = gql`
   {
-    books {
+    projects {
       title
       author
     }
@@ -14,27 +16,67 @@ const FILMS_QUERY = gql`
 `;
 
 const Home = () => {
-  const { data, loading, error } = useQuery(FILMS_QUERY);
+  const [activeProject, setActiveProject] = useState([]);
+
+  useEffect(() => {
+    setActiveProject();
+  }, []);
+
+  const { data, loading, error } = useQuery(PROJECTS_QUERY);
   if (loading) return "Loading...";
   if (error) return <pre>{error.message}</pre>;
   console.log(data);
 
-  // const [activeProject, setActiveProject] = useState([]);
+  const setProject = (project) => {
+    console.log(activeProject);
+    activeProject != project ? setActiveProject(project) : setActiveProject();
+  };
 
-  // useEffect(() => {
-  //   setActiveProject[]
-  // }, []);
+  const welcomeMessageClassnames = classNames({
+    ["welcome-message"]: true,
+    ["hide-welcome-message"]: activeProject != undefined,
+  });
 
   return (
     <Layout>
-      <div className="feature-content">
+      <div className="projects-overview">
         <div className="main-message">
-          <h1 className="HomePage">Home Page</h1>
-          <p>This is a message about me</p>
-          <Projects projects={data.books} />
+          <div className={welcomeMessageClassnames}>
+            <h1 className="welcome-message">Welcome</h1>
+            <p>
+              Hi, I'm Luke. A technically sound, creative problem solving,
+              culture giant
+            </p>
+            <ImageLoader src={Headshot} />
+          </div>
+          <div className="individual-project">
+            <Projects
+              projects={data.projects}
+              activeProject={activeProject}
+              key={data.projects}
+            />
+          </div>
         </div>
+        <div className="spacer"></div>
         <div className="project-links">
-          <ProjectLinks projectLinks={data.books} />
+          <h1>Projects</h1>
+          <div className="project-links-wrapper">
+            <div className="project-links-inner">
+              {data ? (
+                data.projects.map((project, index) => {
+                  return (
+                    <div className="project-link" key={index}>
+                      <span onClick={() => setProject(index)}>
+                        {project.author}
+                      </span>
+                    </div>
+                  );
+                })
+              ) : (
+                <div>You dont have any projectLinks</div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </Layout>

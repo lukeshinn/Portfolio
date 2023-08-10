@@ -1,14 +1,23 @@
 import React, { Component, useState } from "react";
 
-const Projects = ({ projects }) => {
-  const [isSelectedProject, setSelectedProject] = useState([]);
+const Projects = ({ projects, activeProject }) => {
+  // const projectClassNames = classNames({
+  //   ["projects"]: true,
+  //   ["show-project"]: true,
+  // });
   return (
     <>
       {projects ? (
         projects.map((project, index) => {
           return (
-            <div key={index} className={project.title}>
-              {project.title}
+            <div
+              className={
+                "project " + (activeProject == index ? "show-project" : "")
+              }
+              key={index}
+            >
+              <h1>{project.title}</h1>
+              <span>{project.author}</span>
             </div>
           );
         })

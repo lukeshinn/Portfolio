@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 
-const ProjectLinks = ({ projectLinks, handleClick }) => {
+const ProjectLinks = ({ projectLinks, isActiveProject }) => {
+  const mainContainerClassNames = classNames({
+    ["isActiveProject"]: true,
+  });
   return (
-    <>
+    <div class="project-links-inner">
       {projectLinks ? (
         projectLinks.map((project, index) => {
           return (
@@ -14,7 +17,7 @@ const ProjectLinks = ({ projectLinks, handleClick }) => {
       ) : (
         <div>You dont have any projectLinks</div>
       )}
-    </>
+    </div>
   );
 };
 
