@@ -1,14 +1,15 @@
 const express = require("express");
 const path = require("path");
 var db = require("./database.js");
+const http = require("http");
 
 var md5 = require("md5");
 
 var bodyParser = require("body-parser");
 
-const app = express();
+const { ApolloServer, gql } = require("apollo-server-express");
 
-const { ApolloServer, gql } = require("apollo-server");
+const app = express();
 
 const typeDefs = gql`
   # This "Project" type defines the queryable fields: 'title' and 'author'.
@@ -60,34 +61,40 @@ const projects = [
   },
 ];
 
-// Resolvers define the technique for fetching the types defined in the
-// schema. This resolver retrieves projects from the "books" array above.
 const resolvers = {
   Query: {
     projects: () => projects,
   },
 };
 
-// The ApolloServer constructor requires two parameters: your schema
-// definition and your set of resolvers.
-const server = new ApolloServer({ typeDefs, resolvers });
+let apolloServer = null;
+async function startServer() {
+  apolloServer = new ApolloServer({
+    typeDefs,
+    resolvers,
+  });
+  await apolloServer.start();
+  apolloServer.applyMiddleware({ app });
+}
+startServer();
+
+const httpserver = http.createServer(app);
 
 // The `listen` method launches a web server.
-server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
-});
+// app.listen(4000).then(({ url }) => {
+//   console.log(`🚀  Server ready at ${url}`);
+// });
 
-// https://www.apollographql.com/blog/graphql/examples/building-a-graphql-api/
+app.listen(process.env.PORT, function () {
+  console.log(`server running on port 4000`);
+  console.log(`gql path is ${apolloServer.graphqlPath}`);
+});
 
 // Handles any requests that don't match the ones above
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
-// const port = process.env.PORT || 4000;
-// app.listen(port);
-
-// console.log("App is listening on port " + port);
-
 // HELPFUL NOTES
 // https://code.visualstudio.com/docs/nodejs/nodejs-debugging
+// https://www.apollographql.com/blog/graphql/examples/building-a-graphql-api/
