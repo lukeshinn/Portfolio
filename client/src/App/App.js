@@ -11,7 +11,7 @@ const uriString = `https://lukeshinndotdev-0ef255dc6ff1.herokuapp:${port}/`;
 
 const client = new ApolloClient({
   // uri: "https://spacex-production.up.railway.app/",
-  uri: "https://localhost:4000/",
+  uri: "http://localhost:4000/",
   // uri: uriString,
   cache: new InMemoryCache(),
 });
