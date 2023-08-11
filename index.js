@@ -90,6 +90,7 @@ app.use(
   "/",
   cors(),
   bodyParser.json(),
+  express.static(path.join(__dirname, "client/build")),
   // expressMiddleware accepts the same arguments:
   // an Apollo Server instance and optional configuration options
   expressMiddleware(server, {
@@ -97,13 +98,18 @@ app.use(
   })
 );
 
+// // Handles any requests that don't match the ones above
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
+
 // Modified server startup
 await new Promise((resolve) =>
   httpServer.listen({ port: process.env.PORT || 4000 }, resolve)
 );
 
 console.log(`🚀 Server ready at http://localhost:4000/`, process.env.PORT);
-app.use(express.static(path.join(__dirname, "client/build")));
+// app.use(express.static(path.join(__dirname, "client/build")));
 
 // const server = new ApolloServer({ typeDefs, resolvers });
 // const app = express();
@@ -119,11 +125,6 @@ app.use(express.static(path.join(__dirname, "client/build")));
 // server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
 //   console.log(`🚀  Server ready at ${url}`);
 // });
-
-// // Handles any requests that don't match the ones above
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
-});
 
 // const port = process.env.PORT || 4000;
 // app.listen(port);
