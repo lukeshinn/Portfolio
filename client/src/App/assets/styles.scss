@@ -8,16 +8,14 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   background: var(--black);
-  // transition: background 0.2s linear;
+  transition: color 1.4s linear, backgroud 1.4s linear;
   &.dark {
     background: var(--black);
     color: var(--ice);
-    transition: color 0.4s linear, backgroud 0.4s linear;
   }
   &.light {
     background: var(--ice);
     color: var(--black);
-    transition: color 0.2s linear, backgroud 0.2s linear;
     .inner-container {
       background: var(--ice);
       color: var(--black);

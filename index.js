@@ -13,8 +13,8 @@ const { ApolloServer, gql } = require("apollo-server");
 const typeDefs = gql`
   # This "Project" type defines the queryable fields: 'title' and 'author'.
   type Project {
-    title: String
-    author: String
+    company: String
+    projectDescription: [String]
   }
 
   # The "Query" type is special: it lists all of the available queries that
@@ -28,23 +28,35 @@ const typeDefs = gql`
 const projects = [
   {
     id: 1,
-    title: "The Great Gatsby",
-    author: "F. Scott Fitzgerald",
+    company: "Hudl",
+    projectDescription: [
+      "Organization profile, a reactJS landing page for complex video data.",
+      "Automated video exchange by creating a schedule matching service",
+    ],
   },
   {
     id: 2,
-    title: "Wuthering Heights",
-    author: "Emily Brontë",
+    company: "Firespring",
+    projectDescription: [
+      "Organization profile, a reactJS landing page for complex video data.",
+      "Automated video exchange by creating a schedule matching service",
+    ],
   },
   {
     id: 3,
-    title: "Number 3",
-    author: "Number 3 author",
+    company: "NE State Patrol",
+    projectDescription: [
+      "Organization profile, a reactJS landing page for complex video data.",
+      "Automated video exchange by creating a schedule matching service",
+    ],
   },
   {
     id: 4,
-    title: "Number 4",
-    author: "Number 4 author",
+    company: "Hospitality",
+    projectDescription: [
+      "Organization profile, a reactJS landing page for complex video data.",
+      "Automated video exchange by creating a schedule matching service",
+    ],
   },
 ];
 

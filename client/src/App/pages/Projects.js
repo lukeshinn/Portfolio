@@ -16,10 +16,11 @@ const Projects = ({ projects, activeProject }) => {
               }
               key={index}
             >
-              <h1>{project.title}</h1>
-
+              <h1>{project.company}</h1>
               <span className="message-border">
-                <p>{project.author}</p>
+                {project.projectDescription.map((type, index) => {
+                  return <p key={index}>{type}</p>;
+                })}
               </span>
             </div>
           );

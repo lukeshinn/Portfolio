@@ -9,8 +9,8 @@ import Headshot from "../../public/hs-transparent.png";
 const PROJECTS_QUERY = gql`
   {
     projects {
-      title
-      author
+      company
+      projectDescription
     }
   }
 `;
@@ -66,7 +66,7 @@ const Home = () => {
         </div>
         <div className="spacer"></div>
         <div className="project-links">
-          <h1>Projects</h1>
+          <h1>My Work</h1>
           <div className="project-links-wrapper">
             <div className="project-links-inner">
               {data ? (
@@ -74,7 +74,7 @@ const Home = () => {
                   return (
                     <div className="project-link" key={index}>
                       <span onClick={() => setProject(index)}>
-                        {project.author}
+                        {project.company}
                       </span>
                     </div>
                   );
