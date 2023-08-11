@@ -1,14 +1,15 @@
-const express = require("express");
-const path = require("path");
-var db = require("./database.js");
+// const express = require("express");
+import { ApolloServer } from "@apollo/server";
+import { gql } from "apollo-server";
+import { expressMiddleware } from "@apollo/server/express4";
+import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
+import express from "express";
+import http from "http";
+import cors from "cors";
+import bodyParser from "body-parser";
+import path from "path";
 
-var md5 = require("md5");
-
-var bodyParser = require("body-parser");
-
-const app = express();
-
-const { ApolloServer, gql } = require("apollo-server");
+const __dirname = path.resolve();
 
 const typeDefs = gql`
   # This "Project" type defines the queryable fields: 'title' and 'author'.
@@ -60,26 +61,64 @@ const projects = [
   },
 ];
 
-// Resolvers define the technique for fetching the types defined in the
-// schema. This resolver retrieves projects from the "books" array above.
 const resolvers = {
   Query: {
     projects: () => projects,
   },
 };
 
-// The ApolloServer constructor requires two parameters: your schema
-// definition and your set of resolvers.
-const server = new ApolloServer({ typeDefs, resolvers });
+// Required logic for integrating with Express
+const app = express();
+// Our httpServer handles incoming requests to our Express app.
+// Below, we tell Apollo Server to "drain" this httpServer,
+// enabling our servers to shut down gracefully.
+const httpServer = http.createServer(app);
 
-// The `listen` method launches a web server.
-server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
+// Same ApolloServer initialization as before, plus the drain plugin
+// for our httpServer.
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
 });
+// Ensure we wait for our server to start
+await server.start();
 
-// https://www.apollographql.com/blog/graphql/examples/building-a-graphql-api/
+// Set up our Express middleware to handle CORS, body parsing,
+// and our expressMiddleware function.
+app.use(
+  "/",
+  cors(),
+  bodyParser.json(),
+  // expressMiddleware accepts the same arguments:
+  // an Apollo Server instance and optional configuration options
+  expressMiddleware(server, {
+    context: async ({ req }) => ({ token: req.headers.token }),
+  })
+);
 
-// Handles any requests that don't match the ones above
+// Modified server startup
+await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
+
+console.log(`🚀 Server ready at http://localhost:4000/`);
+app.use(express.static(path.join(__dirname, "client/build")));
+
+// const server = new ApolloServer({ typeDefs, resolvers });
+// const app = express();
+
+// await server.start();
+
+// server.applyMiddleware({ app });
+
+// app.listen({ port: 4000 }, () =>
+//   console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+// );
+
+// server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
+//   console.log(`🚀  Server ready at ${url}`);
+// });
+
+// // Handles any requests that don't match the ones above
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
@@ -91,3 +130,4 @@ app.get("*", (req, res) => {
 
 // HELPFUL NOTES
 // https://code.visualstudio.com/docs/nodejs/nodejs-debugging
+// https://www.apollographql.com/blog/graphql/examples/building-a-graphql-api/
