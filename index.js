@@ -102,7 +102,7 @@ await new Promise((resolve) =>
   httpServer.listen({ port: process.env.PORT || 4000 }, resolve)
 );
 
-console.log(`🚀 Server ready at http://localhost:`, process.env.PORT);
+console.log(`🚀 Server ready at http://localhost:4000/`, process.env.PORT);
 app.use(express.static(path.join(__dirname, "client/build")));
 
 // const server = new ApolloServer({ typeDefs, resolvers });

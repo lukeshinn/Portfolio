@@ -6,12 +6,17 @@ import API from "./pages/API";
 import { BrowserRouter, Route } from "react-router-dom";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
+const port = process.env.PORT;
+uriString = `https://lukeshinndotdev-0ef255dc6ff1.herokuapp:${port}/`;
+
 const client = new ApolloClient({
   // uri: "https://spacex-production.up.railway.app/",
   // uri: "http://localhost:4000/",
-  uri: "lukeshinndotdev-0ef255dc6ff1.herokuapp:4000/",
+  uri: uriString,
   cache: new InMemoryCache(),
 });
+
+var test = process.env.PORT;
 
 const App = () => {
   return (
