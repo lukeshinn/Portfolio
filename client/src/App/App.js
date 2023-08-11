@@ -7,7 +7,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
 const port = process.env.PORT;
-uriString = `https://lukeshinndotdev-0ef255dc6ff1.herokuapp:${port}/`;
+const uriString = `https://lukeshinndotdev-0ef255dc6ff1.herokuapp:${port}/`;
 
 const client = new ApolloClient({
   // uri: "https://spacex-production.up.railway.app/",
