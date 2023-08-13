@@ -109,7 +109,6 @@ await new Promise((resolve) =>
 );
 
 console.log(`🚀 Server ready at http://localhost:4000/`, process.env.PORT);
-console.log(server.graphqlPath);
 // app.use(express.static(path.join(__dirname, "client/build")));
 
 // const server = new ApolloServer({ typeDefs, resolvers });
