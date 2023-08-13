@@ -14,7 +14,7 @@ import {
 // const port = process.env.PORT;
 // const uriString = `https://lukeshinndotdev-0ef255dc6ff1.herokuapp:${port}/`;
 const httpLink = new HttpLink({
-  uri: `https://lukeshinndotdev-0ef255dc6ff1.herokuapp/`,
+  uri: `https://lukeshinndotdev-0ef255dc6ff1.herokuapp/graphql`,
   // uri: `http://localhost:4000/`,
 });
 

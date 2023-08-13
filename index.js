@@ -87,7 +87,7 @@ await server.start();
 // Set up our Express middleware to handle CORS, body parsing,
 // and our expressMiddleware function.
 app.use(
-  "/",
+  "/graphql",
   cors(),
   bodyParser.json(),
   express.static(path.join(__dirname, "client/build")),
