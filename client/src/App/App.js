@@ -8,7 +8,8 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
 const port = process.env.PORT;
 const uriString = `https://lukeshinndotdev-0ef255dc6ff1.herokuapp:${port}/`;
-
+console.log("from client");
+console.log(port);
 const client = new ApolloClient({
   // uri: "https://lukeshinndotdev-0ef255dc6ff1.herokuapp:47044/",
   uri: "http://localhost:4000/",
