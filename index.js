@@ -6,7 +6,8 @@ import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHt
 import express from "express";
 import http from "http";
 import cors from "cors";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
+import { json } from "body-parser";
 import path from "path";
 
 const __dirname = path.resolve();
@@ -87,10 +88,9 @@ await server.start();
 // Set up our Express middleware to handle CORS, body parsing,
 // and our expressMiddleware function.
 app.use(
-  "/",
-  // "/graphql",
+  "/graphql",
   cors(),
-  bodyParser.json(),
+  json(),
   express.static(path.join(__dirname, "client/build")),
   // expressMiddleware accepts the same arguments:
   // an Apollo Server instance and optional configuration options
