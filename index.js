@@ -80,6 +80,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+  path: server.graphqlPath,
 });
 // Ensure we wait for our server to start
 await server.start();
@@ -109,6 +110,7 @@ await new Promise((resolve) =>
 );
 
 console.log(`🚀 Server ready at http://localhost:4000/`, process.env.PORT);
+console.log(server.graphqlPath);
 // app.use(express.static(path.join(__dirname, "client/build")));
 
 // const server = new ApolloServer({ typeDefs, resolvers });

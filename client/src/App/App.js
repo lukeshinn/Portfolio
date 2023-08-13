@@ -10,9 +10,9 @@ const port = process.env.PORT;
 const uriString = `https://lukeshinndotdev-0ef255dc6ff1.herokuapp:${port}/`;
 
 const client = new ApolloClient({
-  // uri: "https://spacex-production.up.railway.app/",
+  uri: "https://lukeshinndotdev-0ef255dc6ff1.herokuapp/graphQl",
   // uri: "http://localhost:4000/",
-  uri: uriString,
+  // uri: uriString,
   cache: new InMemoryCache(),
 });
 
