@@ -4,16 +4,25 @@ import TodoList from "./pages/TodoList";
 import GraphQL from "./pages/GraphQL";
 import API from "./pages/API";
 import { BrowserRouter, Route } from "react-router-dom";
-import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  HttpLink,
+} from "@apollo/client";
 
-const port = process.env.PORT;
-const uriString = `https://lukeshinndotdev-0ef255dc6ff1.herokuapp:${port}/`;
-console.log("from client");
-console.log(port);
+// const port = process.env.PORT;
+// const uriString = `https://lukeshinndotdev-0ef255dc6ff1.herokuapp:${port}/`;
+const httpLink = new HttpLink({
+  uri: `https://lukeshinndotdev-0ef255dc6ff1.herokuapp/`,
+  // uri: `http://localhost:4000/`,
+});
+
 const client = new ApolloClient({
   // uri: "https://lukeshinndotdev-0ef255dc6ff1.herokuapp:47044/",
-  uri: "http://localhost:4000/",
+  // uri: "http://localhost:4000/",
   // uri: uriString,
+  link: httpLink,
   cache: new InMemoryCache(),
 });
 
