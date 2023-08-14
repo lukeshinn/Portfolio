@@ -112,7 +112,6 @@ app.get("*", (req, res) => {
 });
 
 console.log(`🚀 Server ready at http://localhost:4000/`, process.env.PORT);
-console.log(path.join(__dirname, "client/build/static"));
 // app.use(express.static(path.join(__dirname, "client/build")));
 
 // const server = new ApolloServer({ typeDefs, resolvers });
@@ -138,3 +137,7 @@ console.log(path.join(__dirname, "client/build/static"));
 // HELPFUL NOTES
 // https://code.visualstudio.com/docs/nodejs/nodejs-debugging
 // https://www.apollographql.com/blog/graphql/examples/building-a-graphql-api/
+// https://expressjs.com/en/starter/static-files.html
+// https://stackoverflow.com/questions/38743275/express-js-unexpected-token
+// https://stackoverflow.com/questions/34105183/uncaught-syntaxerror-unexpected-token-in-node-js
+// https://stackoverflow.com/questions/58090054/express-and-webpack-problem-uncaught-syntaxerror-unexpected-token
