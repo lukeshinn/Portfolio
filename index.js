@@ -98,15 +98,15 @@ app.use(
   })
 );
 
-// // Handles any requests that don't match the ones above
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
-});
-
 // Modified server startup
 await new Promise((resolve) =>
   httpServer.listen({ port: process.env.PORT || 4000 }, resolve)
 );
+
+// // Handles any requests that don't match the ones above
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 
 console.log(`🚀 Server ready at http://localhost:4000/`, process.env.PORT);
 // app.use(express.static(path.join(__dirname, "client/build")));
