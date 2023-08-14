@@ -7,7 +7,7 @@ import express from "express";
 import http from "http";
 import cors from "cors";
 // import bodyParser from "body-parser";
-import { json } from "body-parser";
+import json from "body-parser";
 import path from "path";
 
 const __dirname = path.resolve();
