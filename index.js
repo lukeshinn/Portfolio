@@ -90,12 +90,12 @@ app.use(
   "/graphql",
   cors(),
   bodyParser.json(),
-  express.static(path.join(__dirname, "client/build")),
+  express.static(path.join(__dirname, "client/build"))
   // expressMiddleware accepts the same arguments:
   // an Apollo Server instance and optional configuration options
-  expressMiddleware(server, {
-    context: async ({ req }) => ({ token: req.headers.token }),
-  })
+  // expressMiddleware(server, {
+  //   context: async ({ req }) => ({ token: req.headers.token }),
+  // })
 );
 
 // // Handles any requests that don't match the ones above
