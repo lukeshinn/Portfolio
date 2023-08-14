@@ -37,8 +37,12 @@ body {
 }
 
 img {
-  max-height: 200px;
-  max-width: 200px;
+  max-height: 120px;
+  max-width: 120px;
+  @media screen and (min-width: 900px) {
+    max-height: 200px;
+    max-width: 200px;
+  }
 }
 
 // ================ Main Container ======================
