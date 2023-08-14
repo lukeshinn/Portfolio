@@ -6,7 +6,7 @@
   "author": "Luke Shinn",
   "scripts": {
     "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "license": "ISC",
@@ -24,5 +24,6 @@
     "react": "^17.0.0",
     "sqlite3": "^5.1.4"
   },
-  "type": "module"
+  "type": "module",
+  "homepage": "https://lukeshinndotdev-0ef255dc6ff1.herokuapp.com/"
 }

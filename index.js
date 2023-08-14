@@ -90,12 +90,12 @@ app.use(
   "/graphql",
   cors(),
   bodyParser.json(),
-  express.static(path.join(__dirname, "client/build"))
+  express.static(path.join(__dirname, "client/build/static")),
   // expressMiddleware accepts the same arguments:
   // an Apollo Server instance and optional configuration options
-  // expressMiddleware(server, {
-  //   context: async ({ req }) => ({ token: req.headers.token }),
-  // })
+  expressMiddleware(server, {
+    context: async ({ req }) => ({ token: req.headers.token }),
+  })
 );
 
 // // Handles any requests that don't match the ones above
@@ -109,6 +109,7 @@ await new Promise((resolve) =>
 );
 
 console.log(`🚀 Server ready at http://localhost:4000/`, process.env.PORT);
+console.log(path.join(__dirname, "client/build/static"));
 // app.use(express.static(path.join(__dirname, "client/build")));
 
 // const server = new ApolloServer({ typeDefs, resolvers });
