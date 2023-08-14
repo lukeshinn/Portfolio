@@ -90,7 +90,7 @@ app.use(
   "/graphql",
   cors(),
   bodyParser.json(),
-  express.static(path.join(__dirname, "client/build/static")),
+  // express.static(path.join(__dirname, "client/build/static")),
   // expressMiddleware accepts the same arguments:
   // an Apollo Server instance and optional configuration options
   expressMiddleware(server, {
@@ -98,15 +98,17 @@ app.use(
   })
 );
 
-// // Handles any requests that don't match the ones above
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
-});
+app.use("/static", express.static(path.join(__dirname, "client/build/static")));
 
 // Modified server startup
 await new Promise((resolve) =>
   httpServer.listen({ port: process.env.PORT || 4000 }, resolve)
 );
+
+// // Handles any requests that don't match the ones above
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+});
 
 console.log(`🚀 Server ready at http://localhost:4000/`, process.env.PORT);
 console.log(path.join(__dirname, "client/build/static"));
