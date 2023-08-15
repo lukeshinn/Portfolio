@@ -45,8 +45,10 @@ img {
   }
 }
 
-@media screen and (min-width: 900px) {
-  p {
+.headshot {
+  display: none;
+  @media screen and (min-width: 900px) {
+    display: block;
   }
 }
 
@@ -106,7 +108,7 @@ main {
 }
 
 .inner-container {
-  padding: 22px;
+  padding: 30px;
   background: var(--black);
   z-index: 2;
   border-radius: 5px;
@@ -120,9 +122,6 @@ main {
   h1 {
     font-size: 30px;
     font-weight: 100;
-  }
-  @media screen and (min-width: 900px) {
-    padding: 30px;
   }
 }
 
