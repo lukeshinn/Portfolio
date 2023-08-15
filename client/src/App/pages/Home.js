@@ -53,7 +53,9 @@ const Home = () => {
                 I'm passionate about buildling beautiful scalable applications
                 with an intuitive UI and a high degree of quality.
               </p>
-              <ImageLoader src={Headshot} className="headshot" />
+              <div class="headshot">
+                <ImageLoader src={Headshot} />
+              </div>
             </span>
           </div>
           <div className="individual-project">
