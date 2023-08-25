@@ -1,13 +1,13 @@
 // const express = require("express");
-import { ApolloServer } from "@apollo/server";
-import { gql } from "apollo-server";
-import { expressMiddleware } from "@apollo/server/express4";
-import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
-import express from "express";
-import http from "http";
-import cors from "cors";
-import bodyParser from "body-parser";
-import path from "path";
+import { ApolloServer } from '@apollo/server';
+import { gql } from 'apollo-server';
+import { expressMiddleware } from '@apollo/server/express4';
+import { ApolloServerPluginDrainHttpServer } from '@apollo/server/plugin/drainHttpServer';
+import express from 'express';
+import http from 'http';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import path from 'path';
 
 const __dirname = path.resolve();
 
@@ -29,34 +29,34 @@ const typeDefs = gql`
 const projects = [
   {
     id: 1,
-    company: "Hudl",
+    company: 'Hudl',
     projectDescription: [
-      "Organization profile, a reactJS landing page for complex video data.",
-      "Automated video exchange by creating a schedule matching service",
+      'Organization profile, a reactJS landing page for complex video data.',
+      'Automated video exchange by creating a schedule matching service',
     ],
   },
   {
     id: 2,
-    company: "Firespring",
+    company: 'Firespring',
     projectDescription: [
-      "Organization profile, a reactJS landing page for complex video data.",
-      "Automated video exchange by creating a schedule matching service",
+      'Developed customer specific customizable websites for 10+ enterprise clients',
+      'Led collaboration towards a unified styles framework to be used interanlly. This was component based scheme which sped up development for our internal squads',
     ],
   },
   {
     id: 3,
-    company: "NE State Patrol",
+    company: 'NE State Patrol',
     projectDescription: [
-      "Organization profile, a reactJS landing page for complex video data.",
-      "Automated video exchange by creating a schedule matching service",
+      'Organization profile, a reactJS landing page for complex video data.',
+      'Automated video exchange by creating a schedule matching service',
     ],
   },
   {
     id: 4,
-    company: "Hospitality",
+    company: 'Hospitality',
     projectDescription: [
-      "Organization profile, a reactJS landing page for complex video data.",
-      "Automated video exchange by creating a schedule matching service",
+      'Organization profile, a reactJS landing page for complex video data.',
+      'Automated video exchange by creating a schedule matching service',
     ],
   },
 ];
@@ -88,7 +88,7 @@ await server.start();
 // Set up our Express middleware to handle CORS, body parsing,
 // and our expressMiddleware function.
 app.use(
-  "/graphql",
+  '/graphql',
   cors(),
   bodyParser.json(),
   // express.static(path.join(__dirname, "client/build/static")),
@@ -99,7 +99,7 @@ app.use(
   })
 );
 
-app.use("/static", express.static(path.join(__dirname, "client/build/static")));
+app.use('/static', express.static(path.join(__dirname, 'client/build/static')));
 
 // Modified server startup
 await new Promise((resolve) =>
@@ -107,8 +107,8 @@ await new Promise((resolve) =>
 );
 
 // // Handles any requests that don't match the ones above
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/client/build/index.html"));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 console.log(`🚀 Server ready at http://localhost:4000/`, process.env.PORT);
