@@ -1,6 +1,6 @@
 # Luke Shinn's Portfolio Website
 
-Hi! I'm Luke Shinn an Engineer at a global company called Hudl. I have experience with front end development. My career goals are to be a top full stack developer at a global company. Here's a small preview of something I'm capable of building. Thanks for visiting this page!
+Hi! I'm Luke Shinn an Engineer at [Hudl](https://hudl.com). My recent experiences are in front end development. My career goals are to be a top full stack developer at a global company. Here's a small preview of something I'm capable of building. Thanks for visiting this page!
 
 ## Development
 
