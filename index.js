@@ -1,4 +1,3 @@
-// const express = require("express");
 import { ApolloServer } from '@apollo/server';
 import { gql } from 'apollo-server';
 import { expressMiddleware } from '@apollo/server/express4';
@@ -68,33 +67,21 @@ const resolvers = {
   },
 };
 
-// Required logic for integrating with Express
 const app = express();
-// Our httpServer handles incoming requests to our Express app.
-// Below, we tell Apollo Server to "drain" this httpServer,
-// enabling our servers to shut down gracefully.
 const httpServer = http.createServer(app);
 
-// Same ApolloServer initialization as before, plus the drain plugin
-// for our httpServer.
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
   introspection: true,
 });
-// Ensure we wait for our server to start
 await server.start();
 
-// Set up our Express middleware to handle CORS, body parsing,
-// and our expressMiddleware function.
 app.use(
   '/graphql',
   cors(),
   bodyParser.json(),
-  // express.static(path.join(__dirname, "client/build/static")),
-  // expressMiddleware accepts the same arguments:
-  // an Apollo Server instance and optional configuration options
   expressMiddleware(server, {
     context: async ({ req }) => ({ token: req.headers.token }),
   })
@@ -102,38 +89,15 @@ app.use(
 
 app.use('/static', express.static(path.join(__dirname, 'client/build/static')));
 
-// Modified server startup
 await new Promise((resolve) =>
   httpServer.listen({ port: process.env.PORT || 4000 }, resolve)
 );
 
-// // Handles any requests that don't match the ones above
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 console.log(`🚀 Server ready at http://localhost:4000/`, process.env.PORT);
-// app.use(express.static(path.join(__dirname, "client/build")));
-
-// const server = new ApolloServer({ typeDefs, resolvers });
-// const app = express();
-
-// await server.start();
-
-// server.applyMiddleware({ app });
-
-// app.listen({ port: 4000 }, () =>
-//   console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
-// );
-
-// server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
-//   console.log(`🚀  Server ready at ${url}`);
-// });
-
-// const port = process.env.PORT || 4000;
-// app.listen(port);
-
-// console.log("App is listening on port " + port);
 
 // HELPFUL NOTES
 // https://code.visualstudio.com/docs/nodejs/nodejs-debugging
