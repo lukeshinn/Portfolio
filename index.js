@@ -56,7 +56,7 @@ const projects = [
     company: 'Hospitality',
     projectDescription: [
       'Managed over 1 Million in sales the first fiscal year.',
-      'Worked with a 3rd party marketing team and integrated designs and branding throughout 3 separate brick and mortar ventures.',
+      'Developed marketing strategy and integrated designs and branding throughout 3 separate brick and mortar ventures.',
       'Lead internal teams on company vision and closely kept culture principles.',
     ],
   },

@@ -28,7 +28,7 @@ $breakpoint-xl: 1200px;
 }
 
 // Google Fonts
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap');
 
 // Set your brand colors
 $purple: #8a4d76;
@@ -38,7 +38,7 @@ $beige-light: #d0d1cd;
 $beige-lighter: #eff0eb;
 
 // Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
+$family-sans-serif: 'Nunito', sans-serif;
 $grey-dark: $brown;
 $grey-light: $beige-light;
 $primary: $purple;
@@ -46,4 +46,5 @@ $link: $pink;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
-//
+$colorful-border-width: 150px;
+$colorful-border-width-mobile: 50px;

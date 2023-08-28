@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Layout from "../components/Layout";
-import Projects from "./Projects";
-import { useQuery, gql } from "@apollo/client";
-import classNames from "classnames";
-import ImageLoader from "../components/ImageLoader";
-import Headshot from "../../public/hs-transparent.png";
+import React, { useEffect, useState } from 'react';
+import Layout from '../components/Layout';
+import Projects from './Projects';
+import { useQuery, gql } from '@apollo/client';
+import classNames from 'classnames';
+import ImageLoader from '../components/ImageLoader';
+import Headshot from '../../public/hs-transparent.png';
 
 const PROJECTS_QUERY = gql`
   {
@@ -23,7 +23,7 @@ const Home = () => {
   }, []);
 
   const { data, loading, error } = useQuery(PROJECTS_QUERY);
-  if (loading) return "Loading...";
+  if (loading) return 'Loading...';
   if (error) return <pre>{error.message}</pre>;
   console.log(data);
 
@@ -33,8 +33,8 @@ const Home = () => {
   };
 
   const welcomeMessageClassnames = classNames({
-    ["welcome-message"]: true,
-    ["hide-welcome-message"]: activeProject != undefined,
+    ['welcome-message']: true,
+    ['hide-welcome-message']: activeProject != undefined,
   });
 
   return (
@@ -48,11 +48,13 @@ const Home = () => {
                 Hi, I'm Luke. A technically sound, creative problem solving,
                 culture giant.
               </p>
-
               <p>
                 I'm passionate about buildling beautiful scalable applications
-                with an intuitive UI and a high degree of quality.
+                with an intuitive UI and a high degree of quality. I have
+                aspirations to be one of the best full stack developers at a top
+                company in the world.
               </p>
+              <p></p>
               <div class="headshot">
                 <ImageLoader src={Headshot} />
               </div>

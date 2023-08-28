@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState } from 'react';
 
 const Projects = ({ projects, activeProject }) => {
   // const projectClassNames = classNames({
@@ -12,14 +12,15 @@ const Projects = ({ projects, activeProject }) => {
           return (
             <div
               className={
-                "project " + (activeProject == index ? "show-project" : "")
+                'project ' + (activeProject == index ? 'show-project' : '')
               }
               key={index}
             >
               <h1>{project.company}</h1>
               <span className="message-border">
-                {project.projectDescription.map((type, index) => {
-                  return <p key={index}>{type}</p>;
+                <h3>Accomplishments</h3>
+                {project.projectDescription.map((text, index) => {
+                  return <p key={index}>{text}</p>;
                 })}
               </span>
             </div>
