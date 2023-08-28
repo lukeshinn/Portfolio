@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
-import Projects from './Projects';
+import Projects from '../components/Projects';
 import { useQuery, gql } from '@apollo/client';
 import classNames from 'classnames';
 import ImageLoader from '../components/ImageLoader';
