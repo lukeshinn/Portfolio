@@ -1,19 +1,21 @@
-# React Express Example
+# Luke Shinn's Portfolio Website
 
-This project offers a simple example of how to set up a React project with Create React App and how to connect this app with an Express backend. React-Router is also used for routing.
+Hi! I'm Luke Shinn an Engineer at a global company called Hudl. I have experience with front end development. My career goals are to be a top full stack developer at a global company. Here's a small preview of something I'm capable of building. Thanks for visiting this page!
 
-## Prerequisites
-In order to run this project node.js and npm both need to have been installed.
+## Development
 
-## Deployment
 <ol>
 <li>Clone this repo</li>
-<li>Run npm start from react-express-example to start the Express app</li>
-<li>Run npm start from the client directory to start the React app</li>
+<li>Install dependencies `npm install` from the root and the /client directory</li>
+<li>Run npm start from the root directory to start the server</li>
+<li>Run npm start from the client directory to build and run the front end</li>
 <li>Visit http://localhost:3000/</li>
 </ol>
 
 ## Built With
-* [React.js](https://reactjs.org/)
-* [Express.js](https://expressjs.com/)
-* [React-Router](https://reacttraining.com/react-router/core/guides/philosophy)
+
+- [React.js](https://reactjs.org/)
+- [React-Router](https://reacttraining.com/react-router/core/guides/philosophy)
+- [GraphQL](https://graphql.org/)
+- [Apollo](https://www.apollographql.com/)
+- [Sass](https://sass-lang.com/)
