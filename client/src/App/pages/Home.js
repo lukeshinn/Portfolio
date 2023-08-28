@@ -58,6 +58,16 @@ const Home = () => {
               <div class="headshot">
                 <ImageLoader src={Headshot} />
               </div>
+              <div className="project-link" id="welcome-link">
+                <span>
+                  <a
+                    href="https://github.com/lukeshinn/Portfolio"
+                    target="_blank"
+                  >
+                    View Site Code
+                  </a>
+                </span>
+              </div>
             </span>
           </div>
           <div className="individual-project">

@@ -16,6 +16,9 @@ body {
   &.light {
     background: var(--ice);
     color: var(--black);
+    a {
+      color: var(--black);
+    }
     .inner-container {
       background: var(--ice);
       color: var(--black);
@@ -53,11 +56,20 @@ img {
   }
 }
 
+a {
+  color: var(--ice);
+  text-decoration: none;
+}
+
 .headshot {
   // display: none;
   @media screen and (min-width: 900px) {
     display: block;
   }
+}
+
+#welcome-link {
+  margin-top: 15px;
 }
 
 // ================ Main Container ======================
