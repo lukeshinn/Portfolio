@@ -30,8 +30,9 @@ const projects = [
     id: 1,
     company: 'Hudl',
     projectDescription: [
-      'Organization profile, a reactJS landing page for complex video data.',
-      'Automated video exchange by creating a schedule matching service.',
+      '"Sport Data Generation" - Sport agnostic tagging product that aggregates team and player statistics.',
+      '"The Organization profile" - A reactJS landing page for complex video data.',
+      '"Focus Exchange Network" - Automated video exchange through a schedule matching service.',
     ],
   },
   {
@@ -39,15 +40,15 @@ const projects = [
     company: 'Firespring',
     projectDescription: [
       'Developed customer specific customizable websites for 10+ enterprise clients.',
-      'Led collaboration towards a unified styles framework to be used interanlly. This was component based scheme which sped up development for our internal squads.',
+      'Led strategy towards a unified styles framework This was component based scheme which sped up development and maintenance for our internal squads.',
     ],
   },
   {
     id: 3,
     company: 'NE State Patrol',
     projectDescription: [
-      'Built a product to serve private government data to internal teams.',
-      'Assisted in developing a system to educate sworn officers on new technology and improvements coming from the IT team.',
+      'Built an MVC application to serve private government data to internal teams.',
+      'Developed a system to educate sworn officers on new technology and improvements coming from the IT team.',
     ],
   },
   {

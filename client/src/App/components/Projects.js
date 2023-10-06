@@ -18,7 +18,7 @@ const Projects = ({ projects, activeProject }) => {
             >
               <h1>{project.company}</h1>
               <span className="message-border">
-                <h3>Accomplishments</h3>
+                <h3>Projects</h3>
                 {project.projectDescription.map((text, index) => {
                   return <p key={index}>{text}</p>;
                 })}
