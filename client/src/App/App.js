@@ -10,8 +10,8 @@ import {
 // const port = process.env.PORT;
 // const uriString = `https://lukeshinndotdev-0ef255dc6ff1.herokuapp:${port}/`;
 const httpLink = new HttpLink({
-  uri: `https://lukeshinndotdev-0ef255dc6ff1.herokuapp.com/graphql`,
-  // uri: `http://localhost:4000/graphql`,
+   uri: `https://lukeshinn-20cfffc77c05.herokuapp.com/graphql`,
+  //uri: `http://localhost:4000/graphql`,
 });
 
 const client = new ApolloClient({

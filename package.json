@@ -24,6 +24,5 @@
     "react": "^17.0.0",
     "sqlite3": "^5.1.4"
   },
-  "type": "module",
-  "homepage": "https://lukeshinndotdev-0ef255dc6ff1.herokuapp.com/"
+  "type": "module"
 }
