@@ -1,25 +1,25 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import ThemeToggle from "../components/ThemeToggle";
-import SiteLogo from "../../public/logo.png";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ThemeToggle from '../components/ThemeToggle';
+import SiteLogo from '../../public/logo.png';
 
-import { BsGithub, BsLinkedin, BsInstagram } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs';
 
 const SocialIcons = [
   {
     id: 1,
     icon: <BsGithub size={25} />,
-    url: "https://github.com/lukeshinn",
+    url: 'https://github.com/lukeshinn',
   },
   {
     id: 2,
     icon: <BsLinkedin size={25} />,
-    url: "https://www.linkedin.com/in/luke-shinn-baa8a066/",
+    url: 'https://www.linkedin.com/in/luke-shinn-baa8a066/',
   },
   {
     id: 3,
     icon: <BsInstagram size={25} />,
-    url: "https://www.instagram.com/shinn_bone1/",
+    url: 'https://www.instagram.com/shinn_bone/',
   },
 ];
 
@@ -66,7 +66,7 @@ const NavBar = () => {
 
   return (
     <header className="navbar" role="navigation">
-      <img className="site-logo" src={SiteLogo} alt={"Luke Shinn Logo"} />
+      <img className="site-logo" src={SiteLogo} alt={'Luke Shinn Logo'} />
       <div className="flex">
         <ThemeToggle />
         <div className="social-media">{socialMedia}</div>
