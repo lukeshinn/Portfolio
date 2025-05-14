@@ -33,13 +33,14 @@ const projects = [
       '"Sport Data Generation" - Sport agnostic tagging product that aggregates team and player statistics.',
       '"The Organization profile" - A reactJS landing page for complex video data.',
       '"Focus Exchange Network" - Automated video exchange through a schedule matching service.',
+      '"API coverage reporter" - Bulk aggregation tool that measured the test coverage of our API endpoints.',
     ],
   },
   {
     id: 2,
     company: 'Firespring',
     projectDescription: [
-      'Developed customer specific customizable websites for 10+ enterprise clients.',
+      'Developed customer specific customizable websites for 20+ enterprise clients.',
       'Led strategy towards a unified styles framework This was component based scheme which sped up development and maintenance for our internal squads.',
     ],
   },
@@ -49,15 +50,6 @@ const projects = [
     projectDescription: [
       'Built an MVC application to serve private government data to internal teams.',
       'Developed a system to educate sworn officers on new technology and improvements coming from the IT team.',
-    ],
-  },
-  {
-    id: 4,
-    company: 'Hospitality',
-    projectDescription: [
-      'Managed over 1 Million in sales the first fiscal year.',
-      'Developed marketing strategy and integrated designs and branding throughout 3 separate brick and mortar ventures.',
-      'Lead internal teams on company vision and closely kept culture principles.',
     ],
   },
 ];
